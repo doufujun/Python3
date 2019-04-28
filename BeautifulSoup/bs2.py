@@ -1,4 +1,4 @@
-# find_all 查找所有标签
+# attrs 通过属性查找
 
 import requests
 from bs4 import BeautifulSoup
@@ -7,7 +7,10 @@ html = requests.get('https://book.douban.com/latest?icn=index-latestbook-all').t
 # print(html)
 soup = BeautifulSoup(html, 'lxml')
 # print(soup.li.children)
-test1 = soup.find_all('a')
-# print(test1)
+# test1 = soup.find_all(class_='detail-frame')
+test1 = soup.select('ul li div h2 a')
+print(len(test1))
 for i in test1:
-    print(i)
+    print(i.string)
+
+# print(len(test1))
