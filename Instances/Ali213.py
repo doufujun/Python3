@@ -6,7 +6,7 @@ def getOnePage(url) :
 
 def main () :
     url = 'http://www.ali213.net/zt/ztisitemap_hot.html'
-    html = getOnePage(url)
+    html = getOnePage(url).content.decode('utf-8')
     print(html)
     
 if __name__ == '__main__' :
