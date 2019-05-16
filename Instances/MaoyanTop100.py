@@ -39,6 +39,14 @@ def main(offset):
         print(item)
         writeToFile(item)
 
-if __name__ == '__main__' :
+def multiThreadMode():
     pool = Pool()
     pool.map(main, [i*10 for i in range(10)])
+
+def normalMode() :
+    for i in range(10) :
+        main(i*10)    
+
+if __name__ == '__main__' :
+    normalMode()    
+#     multiThreadMode()
